@@ -5,6 +5,7 @@
 <style>
 .belara-lp{position:relative;width:100vw;max-width:100vw;margin:0;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;box-sizing:border-box}
 body{overflow-x:hidden}
+@media (max-width: 960px){.belara-lp .bl-nav{display:none !important}}
 html{scroll-behavior:smooth}
 .belara-lp a{color:#40372F}.belara-lp a:hover{color:#736558}
 @keyframes bl-pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
@@ -29,7 +30,7 @@ html{scroll-behavior:smooth}
 <div style="font-family: 'Inter', system-ui, sans-serif; color: #40372F; background: #F2EEEB">
 <header style="position: sticky; top: 0; z-index: 50; background: #40372F; padding: 10px 16px"><div style="max-width: 1040px; margin: 0 auto; background: #736558; border-radius: 999px; padding: 4px 4px 4px 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; box-shadow: 0 6px 18px rgba(20,15,10,0.25)">
 <a href="#inicio" aria-label="Belara, inicio" style="display: flex"><img src="https://assets.cdn.filesafe.space/LvhyaT8Bnb5KncPj1vys/media/6ae76f9b36aa4a07e8bf9ff5.png" alt="Belara" style="height: 22px; width: auto; display: block"></a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500">
+<nav class="bl-nav" aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500">
 <a href="#problema" style="color: #F2EEEB; text-decoration: none">El problema</a>
 <a href="#agentes" style="color: #F2EEEB; text-decoration: none">Nuestros Agentes</a>
 <a href="#como-funciona" style="color: #F2EEEB; text-decoration: none">Cómo funciona</a>
