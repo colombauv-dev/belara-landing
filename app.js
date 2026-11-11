@@ -36,7 +36,7 @@
   // Configuración: reemplaza estos valores cuando estén listos.
   var CONFIG={
     webhook:'URL_WEBHOOK',   // Webhook de entrada de GHL que recibe cada contacto
-    agenda:'URL_AGENDA',     // Enlace del calendario de reuniones (GHL)
+    agenda:'https://colombauv-dev.github.io/belara-landing/agenda.html',     // Enlace del calendario de reuniones (GHL)
     agente:'URL_AGENTE'      // Enlace de WhatsApp del agente de Belara
   };
   function set(u){ return u && u.indexOf('URL_')!==0; }
