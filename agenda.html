@@ -24,7 +24,8 @@
   .cal{background:#fff;border:1px solid #D9D2CC;border-radius:16px;padding:8px;overflow:hidden}
   .cal iframe{width:100%;min-height:720px;border:none;overflow:hidden;display:block}
   .note{margin:16px 0 0;font-size:13px;color:#736558}
-  footer{padding:0 24px 48px;font-size:13px;color:#736558;text-align:center}
+  footer{padding:0 24px 48px;font-size:13px;line-height:2;color:#736558;text-align:center}
+  footer a{color:#736558}
 </style>
 </head>
 <body>
@@ -48,12 +49,12 @@
   <p class="note" data-t="note">Los horarios se muestran en tu zona horaria.</p>
 </div></main>
 
-<footer>Belara · Agentes de IA para clínicas estéticas</footer>
+<footer><span data-t="foot">Belara · Agentes de IA para clínicas estéticas</span><br><a href="https://belaralab.com/politica-de-privacidad" data-t="priv">Privacidad</a> · <a href="https://belaralab.com/terminos-y-condiciones" data-t="terms">Términos</a> · <a href="mailto:contacto@belaralab.com">contacto@belaralab.com</a></footer>
 <script>
 (function(){
   var q=new URLSearchParams(location.search), lang=q.get('lang'), cur=(q.get('cur')||'').toUpperCase();
   var T={
-    en:{eb:'Free demo',h1:'Book your demo with Belara.',lead:'We show you how Sistema Belara works with your clinic\'s treatments and calendar, and answer your questions. Pick a time that suits you.',p1:'No commitment',p2:'By video call',p3:'With examples from your clinic',note:'Times are shown in your time zone.',back:'Back to the website',title:'Book your demo · Belara',lang:'en'},
+    en:{eb:'Free demo',h1:'Book your demo with Belara.',lead:'We show you how Sistema Belara works with your clinic\'s treatments and calendar, and answer your questions. Pick a time that suits you.',p1:'No commitment',p2:'By video call',p3:'With examples from your clinic',note:'Times are shown in your time zone.',back:'Back to the website',foot:'Belara · AI agents for aesthetic clinics',priv:'Privacy',terms:'Terms',title:'Book your demo · Belara',lang:'en'},
     esES:{h1:'Reserva tu demo con Belara.',lead:'Te enseñamos cómo funciona Sistema Belara con los tratamientos y la agenda de tu clínica, y resolvemos tus dudas. Elige el horario que mejor te vaya.',title:'Reserva tu demo · Belara',lang:'es-ES'}
   };
   var t=lang==='en'?T.en:(cur==='EUR'?T.esES:null); if(!t) return;
