@@ -5,7 +5,9 @@
 <style>
 .belara-lp{position:relative;width:100vw;max-width:100vw;margin:0;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;box-sizing:border-box}
 body{overflow-x:hidden}
-@media (max-width: 960px){.belara-lp .bl-nav{display:none !important}}
+@media (max-width: 960px){.belara-lp .bl-nav a:not(.bl-cta){display:none !important}}
+.belara-lp a.bl-cta,.belara-lp a.bl-cta:hover{color:#40372F}
+.belara-lp a.bl-cta:focus-visible{outline:2px solid #F2EEEB;outline-offset:2px}
 @media (max-width: 560px){.belara-lp .bl-badges{flex-wrap:wrap !important}}
 html{scroll-behavior:smooth}
 .belara-lp a{color:#40372F}.belara-lp a:hover{color:#736558}
@@ -97,7 +99,7 @@ html{scroll-behavior:smooth}
 <a href="#como-funciona" style="color: #F2EEEB; text-decoration: none">Cómo funciona</a>
 <a href="#implementacion" style="color: #F2EEEB; text-decoration: none">Implementación</a>
 <a href="#preguntas" style="color: #F2EEEB; text-decoration: none">Preguntas</a>
-<a href="https://colombauv-dev.github.io/belara-landing/agenda.html" style="color: #F7E08F; text-decoration: none">Agenda tu demo</a>
+<a class="bl-cta bl-lift" href="https://colombauv-dev.github.io/belara-landing/agenda.html" style="display: inline-flex; align-items: center; min-height: 38px; padding: 0 18px; border-radius: 10px; background: #F7E08F; color: #40372F; font-weight: 600; text-decoration: none">Agenda tu demo</a>
 </nav>
 </div><div class="bl-prefs" role="group" aria-label="Idioma y moneda"><div class="bl-seg" role="group" aria-label="Idioma"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div><div class="bl-seg" role="group" aria-label="Moneda"><button type="button" data-cur="CLP" aria-pressed="true">CLP</button><button type="button" data-cur="EUR" aria-pressed="false">EUR</button></div></div></header><section id="inicio" style="background: #40372F; padding: 72px 24px 96px"><div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
