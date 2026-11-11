@@ -6,6 +6,14 @@
   var BASE='https://colombauv-dev.github.io/belara-landing/';
   var LOGO='https://assets.cdn.filesafe.space/LvhyaT8Bnb5KncPj1vys/media/6ae76f9b36aa4a07e8bf9ff5.png';
   var box=document.getElementById('belara-legal'); if(!box) return;
+/* Quita los márgenes y rellenos que GHL pone alrededor del bloque de código (espacio en blanco arriba) */
+  for(var el=box.parentElement; el && el!==document.body && el!==document.documentElement; el=el.parentElement){
+    el.style.setProperty('padding-top','0','important'); el.style.setProperty('padding-bottom','0','important');
+    el.style.setProperty('margin-top','0','important'); el.style.setProperty('margin-bottom','0','important');
+    el.style.setProperty('min-height','0','important');
+  }
+  document.documentElement.style.setProperty('background','#40372F'); document.body.style.setProperty('background','#40372F');
+  document.body.style.setProperty('margin','0','important');
   var doc=box.getAttribute('data-doc')==='terminos'?'terminos':'privacidad';
   var KEY='belara-prefs';
 

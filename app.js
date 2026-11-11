@@ -1,3 +1,14 @@
+/* Quita los márgenes y rellenos que GHL pone alrededor del bloque de código (espacio en blanco arriba) */
+(function(){
+  var box=document.getElementById('belara-landing'); if(!box) return;
+  for(var el=box.parentElement; el && el!==document.body && el!==document.documentElement; el=el.parentElement){
+    el.style.setProperty('padding-top','0','important'); el.style.setProperty('padding-bottom','0','important');
+    el.style.setProperty('margin-top','0','important'); el.style.setProperty('margin-bottom','0','important');
+    el.style.setProperty('min-height','0','important');
+  }
+  document.documentElement.style.setProperty('background','#40372F'); document.body.style.setProperty('background','#40372F');
+  document.body.style.setProperty('margin','0','important');
+})();
 (function(){
   var root=document.querySelector('.belara-lp'); if(!root) return;
   // Aparición con scroll (difuminado)
