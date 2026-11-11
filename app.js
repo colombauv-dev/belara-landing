@@ -86,7 +86,7 @@
     return undefined;
   }
   var orig=new WeakMap(), attrs=['alt','aria-label','placeholder','title'];
-  function skip(el){ return el.closest && el.closest('.bl-diag-body, .bl-price, script, style'); }
+  function skip(el){ return el.closest && el.closest('.bl-diag-body, script, style'); }
   function apply(){
     root.setAttribute('lang',P.lang==='en'?'en':(P.cur==='EUR'?'es-ES':'es-CL'));
     var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null), n;
@@ -103,16 +103,6 @@
       Object.keys(store).forEach(function(a){ var t=tr(store[a].trim()); el.setAttribute(a,t!==undefined?t:store[a]); });
     });
     root.querySelectorAll('a[data-agenda]').forEach(function(a){ a.href=BLP.agendaUrl(); });
-    var PR={esencial:{CLP:200000,EUR:250},clinica:{CLP:290000,EUR:350},impl:{CLP:500000,EUR:500}};
-    function fmt(n){ if(P.cur==='EUR'){ var x=n.toLocaleString(P.lang==='en'?'en-US':'es-ES'); return P.lang==='en'?'€'+x:x+' €'; }
-      return '$'+n.toLocaleString(P.lang==='en'?'en-US':'es-CL')+(P.lang==='en'?' CLP':''); }
-    var tax=P.lang==='en'?'VAT':'IVA';
-    root.querySelectorAll('.bl-price').forEach(function(el){
-      var p=PR[el.getAttribute('data-plan')]; if(!p) return;
-      el.querySelector('[data-amt]').textContent=fmt(p[P.cur]);
-      el.querySelector('[data-per]').textContent='+ '+tax+(P.lang==='en'?' / month':' / mes');
-      el.querySelector('[data-impl]').textContent=(P.lang==='en'?'One-off setup: ':'Implementación única: ')+fmt(PR.impl[P.cur])+' + '+tax;
-    });
     root.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===P.lang)); });
     root.querySelectorAll('[data-cur]').forEach(function(b){ b.setAttribute('aria-pressed',String(b.getAttribute('data-cur')===P.cur)); });
   }
