@@ -75,7 +75,7 @@
     variant:function(){ return P.lang==='en'?(P.cur==='EUR'?'en-EUR':'en'):(P.cur==='EUR'?'es-ES':'es-CL'); },
     on:function(fn){ subs.push(fn); },
     set:function(k,v){ P[k]=v; save({lang:P.lang,cur:P.cur}); apply(); subs.forEach(function(f){ try{f();}catch(e){} }); },
-    agendaUrl:function(){ return 'https://colombauv-dev.github.io/belara-landing/agenda.html?lang='+P.lang+'&cur='+P.cur; }
+    agendaUrl:function(){ return '/agenda?lang='+P.lang+'&cur='+P.cur; }
   };
 
   function tr(t){
@@ -102,7 +102,7 @@
       var store=orig.get(el); if(!store){ store={}; attrs.forEach(function(a){ if(el.hasAttribute(a)) store[a]=el.getAttribute(a); }); orig.set(el,store); }
       Object.keys(store).forEach(function(a){ var t=tr(store[a].trim()); el.setAttribute(a,t!==undefined?t:store[a]); });
     });
-    root.querySelectorAll('a[href*="belara-landing/agenda.html"]').forEach(function(a){ a.href=BLP.agendaUrl(); });
+    root.querySelectorAll('a[data-agenda]').forEach(function(a){ a.href=BLP.agendaUrl(); });
     var PR={esencial:{CLP:200000,EUR:250},clinica:{CLP:290000,EUR:350},impl:{CLP:500000,EUR:500}};
     function fmt(n){ if(P.cur==='EUR'){ var x=n.toLocaleString(P.lang==='en'?'en-US':'es-ES'); return P.lang==='en'?'€'+x:x+' €'; }
       return '$'+n.toLocaleString(P.lang==='en'?'en-US':'es-CL')+(P.lang==='en'?' CLP':''); }
