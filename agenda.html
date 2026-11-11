@@ -30,25 +30,37 @@
 <body>
 <header><div class="wrap">
   <a href="https://belaralab.com" aria-label="Belara, inicio"><img src="https://assets.cdn.filesafe.space/LvhyaT8Bnb5KncPj1vys/media/6ae76f9b36aa4a07e8bf9ff5.png" alt="Belara"></a>
-  <a class="back" href="https://belaralab.com">Volver a la web</a>
+  <a class="back" data-t="back" href="https://belaralab.com">Volver a la web</a>
 </div></header>
 
 <main><div class="wrap">
-  <p class="eb">Demo gratuita</p>
-  <h1>Agenda tu demo con Belara.</h1>
-  <p class="lead">Te mostramos cómo funciona Sistema Belara con los tratamientos y la agenda de tu clínica, y resolvemos tus dudas. Elige el horario que te acomode.</p>
+  <p class="eb" data-t="eb">Demo gratuita</p>
+  <h1 data-t="h1">Agenda tu demo con Belara.</h1>
+  <p class="lead" data-t="lead">Te mostramos cómo funciona Sistema Belara con los tratamientos y la agenda de tu clínica, y resolvemos tus dudas. Elige el horario que te acomode.</p>
   <ul class="pts">
-    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Sin compromiso</li>
-    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Por videollamada</li>
-    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Con ejemplos de tu clínica</li>
+    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-t="p1">Sin compromiso</span></li>
+    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-t="p2">Por videollamada</span></li>
+    <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#40372F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-t="p3">Con ejemplos de tu clínica</span></li>
   </ul>
   <div class="cal">
     <iframe src="https://api.leadconnectorhq.com/widget/booking/gnVh8oI6EpucDt9Msj8Q" scrolling="no" id="gnVh8oI6EpucDt9Msj8Q_booking" title="Calendario de Belara"></iframe>
   </div>
-  <p class="note">Los horarios se muestran en tu zona horaria.</p>
+  <p class="note" data-t="note">Los horarios se muestran en tu zona horaria.</p>
 </div></main>
 
 <footer>Belara · Agentes de IA para clínicas estéticas</footer>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search), lang=q.get('lang'), cur=(q.get('cur')||'').toUpperCase();
+  var T={
+    en:{eb:'Free demo',h1:'Book your demo with Belara.',lead:'We show you how Sistema Belara works with your clinic\'s treatments and calendar, and answer your questions. Pick a time that suits you.',p1:'No commitment',p2:'By video call',p3:'With examples from your clinic',note:'Times are shown in your time zone.',back:'Back to the website',title:'Book your demo · Belara',lang:'en'},
+    esES:{h1:'Reserva tu demo con Belara.',lead:'Te enseñamos cómo funciona Sistema Belara con los tratamientos y la agenda de tu clínica, y resolvemos tus dudas. Elige el horario que mejor te vaya.',title:'Reserva tu demo · Belara',lang:'es-ES'}
+  };
+  var t=lang==='en'?T.en:(cur==='EUR'?T.esES:null); if(!t) return;
+  document.documentElement.lang=t.lang; if(t.title) document.title=t.title;
+  document.querySelectorAll('[data-t]').forEach(function(el){ var k=el.getAttribute('data-t'); if(t[k]) el.textContent=t[k]; });
+})();
+</script>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
